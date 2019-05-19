@@ -103,26 +103,26 @@
                 </transition>
                 <transition :name="fade">
                     <div class="tile model" v-show="showex">
-                        <h1>Дополнительно</h1>
+                        <h1>Состояние</h1>
                         <form>
-                            <input type="checkbox" name="notused" id="1"><label for="1">Не использовался</label>
-                            <input type="checkbox" name="full" id="2"><label for="2">Полный комплект</label>
-                            <input type="checkbox" name="notfull" id="3"><label for="3">Неполный комплект</label>
-                            <input type="checkbox" name="check" id="4"><label for="4">Чек о покупке</label><br>
-                            <input type="checkbox" name="new" id="5"><label for="5">Новый</label>
-                            <input type="checkbox" name="clear" id="6"><label for="6">Без повреждений</label>
-                            <input type="checkbox" name="kicked" id="7"><label for="7">Царапины</label><br>
-                            <input type="checkbox" name="locked" id="8"><label for="8">Заблокированный</label>
-                            <input type="checkbox" name="canton" id="9"><label for="9">Не включается</label>
-                            <input type="checkbox" name="packed" id="10"><label for="10">Запечатан</label>
-                            <input type="checkbox" name="scuffs" id="11"><label for="11">Легкие потертости</label><br>
-                            <input type="checkbox" name="cracks" id="12"><label for="12">Есть сколы, трещины и т.д.</label>
-                            <input type="checkbox" name="screen" id="13"><label for="13">Разбит экран</label>
+                            <input type="checkbox" name="tags" value="Не использовался" id="1"><label for="1">Не использовался</label>
+                            <input type="checkbox" name="tags" value="Полный комплект" id="2"><label for="2">Полный комплект</label>
+                            <input type="checkbox" name="tags" value="Неполный комплект" id="3"><label for="3">Неполный комплект</label>
+                            <input type="checkbox" name="tags" value="Чек о покупке" id="4"><label for="4">Чек о покупке</label><br>
+                            <input type="checkbox" name="tags" value="Новый" id="5"><label for="5">Новый</label>
+                            <input type="checkbox" name="tags" value="Без повреждений" id="6"><label for="6">Без повреждений</label>
+                            <input type="checkbox" name="tags" value="Царапины" id="7"><label for="7">Царапины</label><br>
+                            <input type="checkbox" name="tags" value="Заблокированный" id="8"><label for="8">Заблокированный</label>
+                            <input type="checkbox" name="tags" value="Не включается" id="9"><label for="9">Не включается</label>
+                            <input type="checkbox" name="tags" value="Запечатан" id="10"><label for="10">Запечатан</label>
+                            <input type="checkbox" name="tags" value="Легкие потертости" id="11"><label for="11">Легкие потертости</label><br>
+                            <input type="checkbox" name="tags" value="Есть сколы, трещины и т.д." id="12"><label for="12">Есть сколы, трещины и т.д.</label>
+                            <input type="checkbox" name="tags" value="Разбит экран" id="13"><label for="13">Разбит экран</label>
                         </form>
                     </div>
                 </transition>
                 <transition :name="fade">
-                    <div class="tile model" v-show="showinfo">
+                    <div class="tile mode l" v-show="showinfo">
                         <h1>Контакты</h1>
                         <form>
                             <div class="form-group">
@@ -142,12 +142,12 @@
                                 <textarea class="form-control rounded-0" id="info" name="info" rows="4"></textarea>
                             </div>
                             <p>Получить ответ</p>
-                            <input type="checkbox" name="mob" id="1"><label for="1">По телефону</label>
-                            <input type="checkbox" name="mail" id="2"><label for="2">По E-mail</label>
-                            <input type="checkbox" name="sms" id="3"><label for="3">SMS</label>
-                            <input type="checkbox" name="whatsapp" id="4"><label for="4">WhatsApp</label>
-                            <input type="checkbox" name="viber" id="5"><label for="5">Viber</label>
-                            <input type="checkbox" name="telegram" id="6"><label for="6">Telegram</label>
+                            <input type="checkbox" name="to" value="По телефону" id="1"><label for="1">По телефону</label>
+                            <input type="checkbox" name="to" value="По E-mail" id="2"><label for="2">По E-mail</label>
+                            <input type="checkbox" name="to" value="SMS" id="3"><label for="3">SMS</label>
+                            <input type="checkbox" name="to" value="WhatsApp" id="4"><label for="4">WhatsApp</label>
+                            <input type="checkbox" name="to" value="Viber" id="5"><label for="5">Viber</label>
+                            <input type="checkbox" name="to" value="Telegram" id="6"><label for="6">Telegram</label>
                         </form>
                     </div>
                 </transition>

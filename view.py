@@ -8,6 +8,9 @@ import settings
 
 @app.route("/", methods=["GET", "POST"])
 def main():
+	platform = request.user_agent.platform
+	if platform == "iphone" or platform == "android":
+		return render_template("index_mobile.html")
 	return render_template("index.html")
 
 
@@ -21,8 +24,8 @@ def form():
 	memory_size = request.form["memory_size"]
 	color = request.form["color"]
 	state = request.form["state"]
-	tags = request.form["tags"]
 	other_information = request.form["other_information"]
+	to = request.form["to"]
 
 	message = configurate_message(
 								client_name,
@@ -32,12 +35,12 @@ def form():
 								memory_size,
 								color,
 								state,
-								tags,
-								other_information
+								other_information,
+								to
 							)
 
 	mail_plus.send_email(settings.to_mail, settings.from_mail, settings.from_mail_password, message)
-	vk_plus.send_message(settings.token, settings.to_user_id)
+	vk_plus.send_message(settings.token, settings.to_user_id, message)
 	return "1"
 
 

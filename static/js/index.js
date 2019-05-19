@@ -76,16 +76,66 @@ var tiles = new Vue({
                     return document.forms[1].emei.value !== "";
                 case 2: 
                     return true;
-                case 3: 
-                    return document.forms[3].name.value !== "" && document.forms[3].phone.value !== "" && document.forms[3].email.value !== "" &&
-                        (document.forms[3].mob.checked || document.forms[3].mail.checked || document.forms[3].sms.checked || document.forms[3].whatsapp.checked
-                        || document.forms[3].viber.checked || document.forms[3].telegram.checked)
+                case 3:
+                    var to_list = [];
+                    $.each($("input[name='to']:checked"), function(){
+                        to_list.push($(this).val());
+                    });
+                    return document.forms[3].name.value !== "" && document.forms[3].phone.value !== "" && document.forms[3].email.value !== "" && to_list.length;
                 case 4: 
-                    return true
+                    return true;
             }
         },
         send: function() {
-            //Здесь написать вытаскивание даты и отправку
+            console.log("clskndlsd");
+            var model = document.forms[0].model.value;
+
+            var memory_select = document.getElementById("memory");
+            var memory = e.options[memory_select.selectedIndex].value;
+
+            var color_select = document.getElementById("color");
+            var color = color_select.options[memory_select.selectedIndex].value;
+
+            var emei = document.getElementById("emei").value;
+
+            var tags_list = [];
+            $.each($("input[name='tags']:checked"), function(){
+                tags_list.push($(this).val());
+            });
+            var tags = tags_list.join(", ");
+
+            var name = document.getElementById("name").value;
+            var phone_number = document.getElementById("phone").value;
+            var email = document.getElementById("email").value;
+            var other_information = document.getElementById("info").value;
+
+            var to_list = [];
+            $.each($("input[name='to']:checked"), function(){
+                to_list.push($(this).val());
+            });
+            var to = to_list.join(", ");
+            var data_ = {
+                "client_name": name,
+                "phone_number": phone_number,
+                "email": email,
+                "model": model,
+                "memory_size": memory,
+                "color": color,
+                "state": tags,
+                "other_information": other_information,
+                "to": to
+            };
+            $.ajax({
+                url: '/form',
+                type: 'post',
+                data: data_,
+                success: function (res) {
+                    if (res === 1)
+                    {
+                        var x = 1;
+                    }
+                },
+            });
         }
     }
-})
+});

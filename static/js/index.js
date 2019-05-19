@@ -28,46 +28,56 @@ var tiles = new Vue({
             this.showfinish = false;
             switch(this.slide) {
                 case 0: 
-                    this.showmodel = true
-                    break
+                    this.showmodel = true;
+                    break;
                 case 1: 
-                    this.showstats = true
-                    break
+                    this.showstats = true;
+                    break;
                 case 2: 
-                    this.showex = true
-                    break
+                    this.showex = true;
+                    break;
                 case 3: 
-                    this.showinfo = true
-                    break
+                    this.showinfo = true;
+                    break;
                 case 4: 
-                    this.showfinish = true
-                    break
+                    this.showfinish = true;
+                    break;
             }
         }
     },
     methods: {
         next: function() {
             this.fade = "fade";
-            if (this.slide != 4 && this.volidate()) {
+            if (this.slide !== 4 && this.volidate()) {
                 this.slide++;
+                document.getElementById("prev").style = "";
+                if (this.slide === 4)
+                {
+                    document.getElementById("next").style = "display: none";
+                }
             }
         },
         prev: function() {
             this.fade = "fade2";
-            if (this.slide != 0) {
+            if (this.slide !== 0) {
                 this.slide--;
+                document.getElementById("next").style = "";
+                if (this.slide === 0)
+                {
+                    document.getElementById("prev").style = "display: none";
+                }
             }
         },
         volidate: function() {
             switch(this.slide) {
                 case 0: 
-                    return document.forms[0].model.value != ""
+                    return document.forms[0].model.value !== "";
                 case 1: 
-                    return document.forms[1].emei.value != ""
+                    return document.forms[1].emei.value !== "";
                 case 2: 
-                    return true
+                    return true;
                 case 3: 
-                    return document.forms[3].name.value != "" && document.forms[3].phone.value != "" && document.forms[3].email.value != "" && 
+                    return document.forms[3].name.value !== "" && document.forms[3].phone.value !== "" && document.forms[3].email.value !== "" &&
                         (document.forms[3].mob.checked || document.forms[3].mail.checked || document.forms[3].sms.checked || document.forms[3].whatsapp.checked
                         || document.forms[3].viber.checked || document.forms[3].telegram.checked)
                 case 4: 

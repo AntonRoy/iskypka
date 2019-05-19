@@ -25,17 +25,17 @@
             <a href="http://instagram.com" target="_blank"><i class="fab fa-instagram"></i></i></a>
             <a href="http://whatsapp.com" target="_blank"><i class="fab fa-whatsapp"></i></i></a>
         </div>
-        <div class="goform"><a href="#form"><i class="fas fa-chevron-up"></i></a></div>
+        <div class="goform"><a href="#form"><i class="fas fa-chevron-down"></i></a></div>
         <a name="landing" class="anchor"></a>
     </div>
     <hr>
     <div class="main">
-        <div class="goback"><a href="#landing"><i class="fas fa-chevron-up"></i></a></div>
+        <div class="goback"><a href="#landing"><i class="fas fa-chevron-down"></i></a></div>
         <div class="tiles" id="tiles">
-                <div class="prev" @click="prev"><i class="fas fa-chevron-up"></i></div>
+                <div class="prev" id="prev" style="display: none" @click="prev"><i class="fas fa-chevron-up"></i></div>
                 <transition :name="fade">
                     <div class="tile model" v-show="showmodel">
-                        <h1>Модель</h3>
+                        <h1>Модель</h1>
                         <form>
                             <input type="radio" name="model" value="iphone4" id="iphone4"><label for="iphone4">IPhone 4</label>
                             <input type="radio" name="model" value="iphone4s" id="iphone4s"><label for="iphone4s">IPhone 4s</label>
@@ -61,8 +61,8 @@
                 </transition>
                 <transition :name="fade">
                     <div class="tile model" v-show="showstats">
-                        <h1>Характеристики</h3>
-                        <form>
+                        <h1>Характеристики</h1>
+                        <form style="padding-top: 5%; padding-left: 25%; width: 75%;">
                             <div class="form-group">
                                 <label for="memory">Объем памяти</label>
                                 <select class="form-control" id="memory" name="memory">
@@ -103,7 +103,7 @@
                 </transition>
                 <transition :name="fade">
                     <div class="tile model" v-show="showex">
-                        <h1>Дополнительно</h3>
+                        <h1>Дополнительно</h1>
                         <form>
                             <input type="checkbox" name="notused" id="1"><label for="1">Не использовался</label>
                             <input type="checkbox" name="full" id="2"><label for="2">Полный комплект</label>
@@ -123,7 +123,7 @@
                 </transition>
                 <transition :name="fade">
                     <div class="tile model" v-show="showinfo">
-                        <h1>Контакты</h3>
+                        <h1>Контакты</h1>
                         <form>
                             <div class="form-group">
                                 <label for="name">Имя</label>
@@ -157,7 +157,7 @@
                         <p>(нажимая эту кнопку, вы даете согласие на обработку персональных данных)</p>
                     </div>
                 </transition>
-                <div class="next" @click="next"><i class="fas fa-chevron-up"></i></div>
+                <div class="next" id="next" @click="next"><i class="fas fa-chevron-up"></i></div>
         </div>
         <a name="form" class="anchor"></a>
     </div>

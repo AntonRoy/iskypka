@@ -8,7 +8,7 @@ import settings
 
 @app.route("/", methods=["GET", "POST"])
 def main():
-	return render_template("main.html")
+	return render_template("index.html")
 
 
 @app.route("/form", methods=["GET", "POST"])

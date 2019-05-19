@@ -38,9 +38,11 @@ def form():
 								other_information,
 								to
 							)
-
-	mail_plus.send_email(settings.to_mail, settings.from_mail, settings.from_mail_password, message)
-	vk_plus.send_message(settings.token, settings.to_user_id, message)
+	try:
+		mail_plus.send_email(settings.to_mail, settings.from_mail, settings.from_mail_password, message)
+		vk_plus.send_message(settings.token, settings.to_user_id, message)
+	except:
+		return "0"
 	return "1"
 
 

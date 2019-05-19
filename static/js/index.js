@@ -87,11 +87,10 @@ var tiles = new Vue({
             }
         },
         send: function() {
-            console.log("clskndlsd");
             var model = document.forms[0].model.value;
 
             var memory_select = document.getElementById("memory");
-            var memory = e.options[memory_select.selectedIndex].value;
+            var memory = memory_select.options[memory_select.selectedIndex].value;
 
             var color_select = document.getElementById("color");
             var color = color_select.options[memory_select.selectedIndex].value;
@@ -125,16 +124,15 @@ var tiles = new Vue({
                 "other_information": other_information,
                 "to": to
             };
+
             $.ajax({
+                type: 'POST',
                 url: '/form',
-                type: 'post',
                 data: data_,
+                dataType: 'json',
                 success: function (res) {
-                    if (res === 1)
-                    {
-                        var x = 1;
-                    }
-                },
+                    console.log(res);
+                }
             });
         }
     }

@@ -37,24 +37,24 @@
                     <div class="tile model" v-show="showmodel">
                         <h1>Модель</h1>
                         <form>
-                            <input type="radio" name="model" value="iphone4" id="iphone4"><label for="iphone4">IPhone 4</label>
-                            <input type="radio" name="model" value="iphone4s" id="iphone4s"><label for="iphone4s">IPhone 4s</label>
-                            <input type="radio" name="model" value="iphone5" id="iphone5"><label for="iphone5">IPhone 5</label>
-                            <input type="radio" name="model" value="iphone5c" id="iphone5c"><label for="iphone5c">IPhone 5c</label><br>
-                            <input type="radio" name="model" value="iphone5s" id="iphone5s"><label for="iphone5s">IPhone 5s</label>
-                            <input type="radio" name="model" value="iphonese" id="iphonese"><label for="iphonese">IPhone SE</label>
-                            <input type="radio" name="model" value="iphone6" id="iphone6"><label for="iphone6">IPhone 6</label><br>
-                            <input type="radio" name="model" value="iphone6+" id="iphone6+"><label for="iphone6+">IPhone 6 plus</label>
-                            <input type="radio" name="model" value="iphone6s" id="iphone6s"><label for="iphone6s">IPhone 6s</label>
-                            <input type="radio" name="model" value="iphone6s+" id="iphone6s+"><label for="iphone6s+">IPhone 6s plus</label>
-                            <input type="radio" name="model" value="iphone7" id="iphone7"><label for="iphone7">IPhone 7</label><br>
-                            <input type="radio" name="model" value="iphone7+" id="iphone7+"><label for="iphone7+">IPhone 7 plus</label>
-                            <input type="radio" name="model" value="iphone8" id="iphone8"><label for="iphone8">IPhone 8</label>
-                            <input type="radio" name="model" value="iphone8+" id="iphone8+"><label for="iphone8+">IPhone 8 plus</label><br>
-                            <input type="radio" name="model" value="iphonex" id="iphonex"><label for="iphonex">IPhone X</label>
-                            <input type="radio" name="model" value="iphonexs" id="iphonexs"><label for="iphonexs">IPhone XS</label>
-                            <input type="radio" name="model" value="iphonexsmax" id="iphonexsmax"><label for="iphonexsmax">IPhone XS Max</label>
-                            <input type="radio" name="model" value="iphonexr" id="iphonexr"><label for="iphonexr">IPhone XR</label><br>
+                            <input type="radio" name="model" value="iphone 4" id="iphone4"><label for="iphone4">IPhone 4</label>
+                            <input type="radio" name="model" value="iphone 4s" id="iphone4s"><label for="iphone4s">IPhone 4s</label>
+                            <input type="radio" name="model" value="iphone 5" id="iphone5"><label for="iphone5">IPhone 5</label>
+                            <input type="radio" name="model" value="iphone 5c" id="iphone5c"><label for="iphone5c">IPhone 5c</label><br>
+                            <input type="radio" name="model" value="iphone 5s" id="iphone5s"><label for="iphone5s">IPhone 5s</label>
+                            <input type="radio" name="model" value="iphone SE" id="iphonese"><label for="iphonese">IPhone SE</label>
+                            <input type="radio" name="model" value="iphone 6" id="iphone6"><label for="iphone6">IPhone 6</label><br>
+                            <input type="radio" name="model" value="iphone 6+" id="iphone6+"><label for="iphone6+">IPhone 6 plus</label>
+                            <input type="radio" name="model" value="iphone 6s" id="iphone6s"><label for="iphone6s">IPhone 6s</label>
+                            <input type="radio" name="model" value="iphone 6s+" id="iphone6s+"><label for="iphone6s+">IPhone 6s plus</label>
+                            <input type="radio" name="model" value="iphone 7" id="iphone7"><label for="iphone7">IPhone 7</label><br>
+                            <input type="radio" name="model" value="iphone 7+" id="iphone7+"><label for="iphone7+">IPhone 7 plus</label>
+                            <input type="radio" name="model" value="iphone 8" id="iphone8"><label for="iphone8">IPhone 8</label>
+                            <input type="radio" name="model" value="iphone 8+" id="iphone8+"><label for="iphone8+">IPhone 8 plus</label><br>
+                            <input type="radio" name="model" value="iphone X" id="iphonex"><label for="iphonex">IPhone X</label>
+                            <input type="radio" name="model" value="iphone XS" id="iphonexs"><label for="iphonexs">IPhone XS</label>
+                            <input type="radio" name="model" value="iphone XSmax" id="iphonexsmax"><label for="iphonexsmax">IPhone XS Max</label>
+                            <input type="radio" name="model" value="iphone XR" id="iphonexr"><label for="iphonexr">IPhone XR</label><br>
                             <input type="radio" name="model" value="dn" id="dn"><label for="dn">не известно</label>
                         </form>
                     </div>
@@ -62,7 +62,7 @@
                 <transition :name="fade">
                     <div class="tile model" v-show="showstats">
                         <h1>Характеристики</h1>
-                        <form style="padding-top: 5%; padding-left: 25%; width: 75%;">
+                        <form class="form-content">
                             <div class="form-group">
                                 <label for="memory">Объем памяти</label>
                                 <select class="form-control" id="memory" name="memory">
@@ -124,7 +124,7 @@
                 <transition :name="fade">
                     <div class="tile mode l" v-show="showinfo">
                         <h1>Контакты</h1>
-                        <form>
+                        <form class="form-content">
                             <div class="form-group">
                                 <label for="name">Имя</label>
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Имя" style="margin:0;">
@@ -153,7 +153,7 @@
                 </transition>
                 <transition :name="fade">
                     <div class="tile model" v-show="showfinish">
-                        <button class="send">Отправить Заявку</button>
+                        <button class="send" @click="send">Отправить Заявку</button>
                         <p>(нажимая эту кнопку, вы даете согласие на обработку персональных данных)</p>
                     </div>
                 </transition>
@@ -161,7 +161,7 @@
         </div>
         <a name="form" class="anchor"></a>
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="../static/js/index.js"></script>
 </body>
 </html>

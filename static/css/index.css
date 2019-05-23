@@ -15,21 +15,21 @@ input[type=radio] {
     padding: 0.5em;
     -webkit-appearance: none;
 }
-  
+
 input[type=radio]:checked {
    background: url(data:image/gif;base64,R0lGODlhAQABAPAAAP///////yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==) no-repeat center center;
    filter: invert(1);
    border: 1px solid rgb(255, 255, 255);
    background-size: 9px 9px;
 }
-  
+
 input[type=radio]:focus {
     outline-color: transparent;
 }
 
 .landing {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: relative;
 }
 
@@ -40,21 +40,13 @@ input[type=radio]:focus {
 }
 
 .landing .logo {
-    position: absolute;
-    top: 50vh;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 50%;
+    height: 70%;
 }
 
 .landing .contacts {
-    position: absolute;
-    bottom: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: row;
-    width: max-content;
+    justify-content: center;
 }
 
 .landing .contacts i {
@@ -77,11 +69,39 @@ input[type=radio]:focus {
     color: #e67e22;
 }
 
+.landing .main-row
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.landing .inf-row
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+}
+
+.landing .landing-main-block
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.landing .box
+{
+    display: flex;
+    flex-direction: column;
+    padding: 4%;
+}
+
 .goform {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .goform i {
